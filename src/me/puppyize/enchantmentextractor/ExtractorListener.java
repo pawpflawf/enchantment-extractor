@@ -1,6 +1,5 @@
 package me.puppyize.enchantmentextractor;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -18,17 +17,12 @@ import org.bukkit.inventory.meta.EnchantmentStorageMeta;
  *
  * @author Puppy Firelyte <dev@puppyize.me>
  */
-public class ExtractorListener implements Listener{
+class ExtractorListener implements Listener{
 
-    private void SEND(String m){
-        Bukkit.getConsoleSender().sendMessage(m);
-    }
+	@EventHandler
+	public void InventoryClick(PrepareItemCraftEvent e){
 
-    @EventHandler
-    public void InventoryClick(PrepareItemCraftEvent e){
-        SEND("PrepareItemCraftEvent");
-
-        if(e.getInventory().getResult().getType() == Material.ENCHANTED_BOOK) {
+		if (e.getInventory().getResult().getType() == Material.ENCHANTED_BOOK) {
 
             ItemStack item = new ItemStack(Material.AIR);
             for (ItemStack itemStack : e.getInventory().getContents()) {
@@ -57,14 +51,12 @@ public class ExtractorListener implements Listener{
 
     @EventHandler
     public void InventoryClick(CraftItemEvent e){
-        SEND("CraftItemEvent");
 
-        //TODO: Need to properly extract Enchantment from result and remove from item
-        Enchantment enchant = e.getInventory().getResult().getItemMeta().getEnchants().keySet().iterator().next();
-        ItemStack item = new ItemStack(Material.AIR);
-        for (ItemStack itemStack : e.getInventory().getContents()) {
-            if (itemStack.getType() != Material.AIR && itemStack.getType() != Material.BOOK) {
-                item = itemStack;
+	    Enchantment enchant = ((EnchantmentStorageMeta) e.getInventory().getResult().getItemMeta()).getStoredEnchants().keySet().iterator().next();
+	    ItemStack item = new ItemStack(Material.AIR);
+	    for (ItemStack itemStack : e.getInventory().getContents()) {
+		    if (itemStack.getType() != Material.AIR && itemStack.getType() != Material.BOOK) {
+			    item = itemStack;
             }
         }
 

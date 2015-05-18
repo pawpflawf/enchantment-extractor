@@ -1,7 +1,7 @@
 # Enchantment Extraction - Enchants to Books #
-## Latest: 0.1 - Spigot 1.8.4 ##
+## Latest: 1.0 - Spigot 1.8.4 ##
 
-**EnchantmentExtraction** opens the ability for Players to salvage their enchantments and create the ultimate enchanted item! Using a standard Anvil, Players can combine any enchanted item with a blank book to salvage / extract 1 of the enchantments from the item! The extraction puts the exact enchantment into the book for later use, leaving the other enchantments available for usage (or extraction themselves)! 
+**EnchantmentExtraction** opens the ability for Players to salvage their enchantments and create the ultimate enchanted item! Using a standard crafting bench, Players can combine any enchanted item with a blank book to salvage / extract 1 of the enchantments from the item! The extraction puts the exact enchantment into the book for later use, leaving the other enchantments available for usage (or extraction themselves)! 
 
 **EnchantmentExtraction** takes advantage of MCStats for plugin statistical purposes. Statistical information retrieved from this tool is exclusively used by the developer to understand how the plugin is implemented and used 'in the wild' (a.k.a. production). Easy opt-out instructions are defined below! :D  
 
@@ -31,10 +31,7 @@ The following data is **sent** to http://mcstats.org and can be seen under [http
 
 ### External Links ###
 - [MCStats](http://mcstats.org/plugin/EnchantmentExtractor 'MCStats Details')
-- [Bukkit Project](http://dev.bukkit.org/bukkit-plugins/enchantmentextractor/ 'Bukkit Project Page')
-- [Spigot Project](http://www.spigotmc.org/resources/enchantmentextractor/ 'Spigot Project Page')
 - [GitHub Repo](https://github.com/puppyize/EnchantmentExtractor 'The Repository')
-- [GitHub Wiki](https://github.com/puppyize/EnchantmentExtractor/wiki 'The Wiki')
 
 -----
 
