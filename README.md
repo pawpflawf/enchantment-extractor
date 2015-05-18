@@ -1,5 +1,5 @@
 # Enchantment Extraction - Enchants to Books #
-## Latest: 0.1 - Spigot 1.8.3 ##
+## Latest: 0.1 - Spigot 1.8.4 ##
 
 **EnchantmentExtraction** opens the ability for Players to salvage their enchantments and create the ultimate enchanted item! Using a standard Anvil, Players can combine any enchanted item with a blank book to salvage / extract 1 of the enchantments from the item! The extraction puts the exact enchantment into the book for later use, leaving the other enchantments available for usage (or extraction themselves)! 
 
