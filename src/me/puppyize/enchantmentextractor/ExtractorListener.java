@@ -22,14 +22,15 @@ class ExtractorListener implements Listener{
 
 	@EventHandler
 	public void InventoryClick(PrepareItemCraftEvent e){
-        Player p = (Player) e.getInventory().getViewers().iterator().next();
-        if(!p.hasPermission("enchantment.extractor.extract")){
-            e.getInventory().setResult(null);
-            p.sendMessage("You do not have permission to extract Enchantments");
-            return;
-        }
 
-		if (e.getInventory().getResult().getType() == Material.ENCHANTED_BOOK) {
+        if (e.getInventory().getResult().getType() == Material.ENCHANTED_BOOK) {
+
+            Player p = (Player) e.getInventory().getViewers().iterator().next();
+            if(!p.hasPermission("enchantment.extractor.extract")){
+                e.getInventory().setResult(null);
+                p.sendMessage("You do not have permission to extract Enchantments");
+                return;
+            }
 
             ItemStack item = new ItemStack(Material.AIR);
             for (ItemStack itemStack : e.getInventory().getContents()) {
