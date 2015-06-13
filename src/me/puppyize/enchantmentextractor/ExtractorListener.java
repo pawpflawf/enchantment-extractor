@@ -1,5 +1,6 @@
 package me.puppyize.enchantmentextractor;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -12,7 +13,7 @@ import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 
 /**
  * <p>
- * This Minecraft plugin allows a player to extract Enchants from enchanted items through the use of an Anvil
+ * This Minecraft plugin allows a player to extract Enchants from enchanted items through the use of an CraftingTable
  * </p>
  *
  * @author Puppy Firelyte <dev@puppyize.me>
@@ -21,6 +22,12 @@ class ExtractorListener implements Listener{
 
 	@EventHandler
 	public void InventoryClick(PrepareItemCraftEvent e){
+        Player p = (Player) e.getInventory().getViewers().iterator().next();
+        if(!p.hasPermission("enchantment.extractor.extract")){
+            e.getInventory().setResult(null);
+            p.sendMessage("You do not have permission to extract Enchantments");
+            return;
+        }
 
 		if (e.getInventory().getResult().getType() == Material.ENCHANTED_BOOK) {
 
@@ -52,7 +59,10 @@ class ExtractorListener implements Listener{
     @EventHandler
     public void InventoryClick(CraftItemEvent e){
 
-	    Enchantment enchant = ((EnchantmentStorageMeta) e.getInventory().getResult().getItemMeta()).getStoredEnchants().keySet().iterator().next();
+        // Check if result is ENCHANTED_BOOK, skip out if not [Fixes #1]
+        if(e.getInventory().getResult().getType() != Material.ENCHANTED_BOOK) return;
+
+        Enchantment enchant = ((EnchantmentStorageMeta) e.getInventory().getResult().getItemMeta()).getStoredEnchants().keySet().iterator().next();
 	    ItemStack item = new ItemStack(Material.AIR);
 	    for (ItemStack itemStack : e.getInventory().getContents()) {
 		    if (itemStack.getType() != Material.AIR && itemStack.getType() != Material.BOOK) {
@@ -61,10 +71,17 @@ class ExtractorListener implements Listener{
         }
 
         Player p = (Player) e.getWhoClicked();
+        if(!p.hasPermission("enchantment.extractor.salvage")){
+            char[] item_name = item.toString().toCharArray();
+            item_name[0] = item.toString().toUpperCase().charAt(0);
+
+            p.sendMessage("You foolishly broke your " + String.valueOf(item_name)  + " while extracting the enchantment");
+            return;
+        }
+
         int openInvSpot = p.getInventory().firstEmpty();
 
         item.removeEnchantment(enchant);
         p.getInventory().setItem(openInvSpot,item);
     }
-
 }
