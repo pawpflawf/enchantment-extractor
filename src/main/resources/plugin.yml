@@ -1,7 +1,7 @@
 name: EnchantmentExtractor
-version: @VERSION@
+version: 1.2.0
 description: Extract your beloved enchantments into books!
-author: PuppyFirelyte
+author: Puppyize
 website: https://github.com/puppyize/EnchantmentExtractor
 
 main: me.puppyize.enchantmentextractor.EnchantmentExtractor

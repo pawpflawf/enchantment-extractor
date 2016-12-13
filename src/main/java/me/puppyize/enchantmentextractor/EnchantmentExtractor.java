@@ -14,7 +14,7 @@ import java.util.logging.Level;
  * This Minecraft plugin allows a player to extract Enchants from enchanted items through the use of an Anvil
  * </p>
  *
- * @author Puppy Firelyte <dev@puppyize.me>
+ * @author Pawpy Firelyte <dev@puppyize.me>
  */
 
 public final class EnchantmentExtractor extends JavaPlugin{

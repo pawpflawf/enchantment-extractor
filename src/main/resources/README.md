@@ -1,5 +1,5 @@
 # Enchantment Extractor #
-## Latest: 1.1.3 - Spigot 1.8.7 ##
+## Latest: 1.2.0 - Spigot 1.11 ##
 
 **EnchantmentExtractor** opens the ability for Players to salvage their enchantments and create the ultimate enchanted item! Using a standard crafting bench, Players can combine any enchanted item with a blank book to salvage / extract 1 of the enchantments from the item! The extraction puts the exact enchantment into the book for later use, leaving the other enchantments available for usage (or extraction themselves)! 
 

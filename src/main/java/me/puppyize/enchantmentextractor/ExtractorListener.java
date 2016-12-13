@@ -16,7 +16,7 @@ import org.bukkit.inventory.meta.EnchantmentStorageMeta;
  * This Minecraft plugin allows a player to extract Enchants from enchanted items through the use of an CraftingTable
  * </p>
  *
- * @author Puppy Firelyte <dev@puppyize.me>
+ * @author Pawpy Firelyte <dev@puppyize.me>
  */
 class ExtractorListener implements Listener{
 
