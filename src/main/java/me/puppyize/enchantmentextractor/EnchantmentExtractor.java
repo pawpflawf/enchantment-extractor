@@ -21,13 +21,6 @@ public final class EnchantmentExtractor extends JavaPlugin{
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new ExtractorListener(), this);
         addRecipes();
-
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException e) {
-            getLogger().log(Level.WARNING, "Metrics failed to load");
-        }
     }
 
     public void onDisable() {

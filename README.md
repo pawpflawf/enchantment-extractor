@@ -1,5 +1,5 @@
 # Enchantment Extractor #
-## Latest: 1.2.0 - Spigot 1.11 ##
+## Latest: 1.3.0 - Spigot 1.12 ##
 
 **EnchantmentExtractor** opens the ability for Players to salvage their enchantments and create the ultimate enchanted item! Using a standard crafting bench, Players can combine any enchanted item with a blank book to salvage / extract 1 of the enchantments from the item! The extraction puts the exact enchantment into the book for later use, leaving the other enchantments available for usage (or extraction themselves)! 
 
@@ -13,30 +13,7 @@
 
 -----
 
-### MCStats / Metrics ###
-
-**Disabling Metrics**
-The file ../plugins/Plugin Metrics/config.yml contains an option to opt-out  
-
-The following data is **read** from the server in some way or another  
-
-- File Contents of plugins/Plugin Metrics/config.yml (created if not existent)
-- Players currently online (not max player count)
-- Server version string (the same version string you see in /version)
-- Plugin version of the metrics-supported plugin
-
-The following data is **sent** to http://mcstats.org and can be seen under [http://mcstats.org/plugin/EnchantmentExtractor](http://mcstats.org/plugin/EnchantmentExtractor 'MCStats Page')
-
-- Metrics revision of the implementing class
-- Server's GUID
-- Players currently online (not max player count)
-- Server version string (the same version string you see in /version)
-- Plugin version of the metrics-supported plugin
-
------
-
 ### External Links ###
-- [MCStats](http://mcstats.org/plugin/EnchantmentExtractor 'MCStats Details')
 - [Spigot](http://www.spigotmc.org/resources/enchantmentextractor.7198/ 'Spigot Project Page')
 - [GitHub Repo](https://github.com/puppyize/EnchantmentExtractor 'The Repository')
 
